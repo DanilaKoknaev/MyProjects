@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: finance-management-system
+  threads:
+    virtual:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+server:
+  shutdown: graceful
+
+app:
+  version: ${APP_VERSION:0.0.1-SNAPSHOT}
+  security:
+    jwt:
+      secret: ${JWT_SECRET}
+      access-ttl: ${JWT_ACCESS_TTL:15m}
+      refresh-ttl: ${JWT_REFRESH_TTL:30d}

@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/finance_test}
+    username: ${DB_USERNAME:finance}
+    password: ${DB_PASSWORD:finance}
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID:test-client}
+            client-secret: ${GOOGLE_CLIENT_SECRET:test-secret}
+
+logging:
+  level:
+    org.example.finance: DEBUG
+
+app:
+  security:
+    jwt:
+      secret: test-only-secret-with-at-least-thirty-two-characters
