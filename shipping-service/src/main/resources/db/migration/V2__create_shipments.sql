@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS shipments (
+    id UUID PRIMARY KEY,
+    order_id UUID NOT NULL UNIQUE,
+    user_id VARCHAR(255) NOT NULL,
+    tracking_number VARCHAR(64) NOT NULL UNIQUE,
+    status VARCHAR(32) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL
+);
