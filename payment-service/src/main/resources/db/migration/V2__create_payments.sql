@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS payments (
+    id UUID PRIMARY KEY,
+    order_id UUID NOT NULL UNIQUE,
+    user_id VARCHAR(255) NOT NULL,
+    amount NUMERIC(19, 2) NOT NULL,
+    currency VARCHAR(3) NOT NULL,
+    status VARCHAR(32) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL
+);

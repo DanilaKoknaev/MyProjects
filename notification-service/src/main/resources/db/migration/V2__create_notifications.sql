@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS notifications (
+    id UUID PRIMARY KEY,
+    event_id UUID NOT NULL UNIQUE,
+    order_id UUID NOT NULL,
+    user_id VARCHAR(255) NOT NULL,
+    message VARCHAR(512) NOT NULL,
+    sent_at TIMESTAMP WITH TIME ZONE NOT NULL
+);
